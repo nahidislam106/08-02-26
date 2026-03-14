@@ -45,7 +45,25 @@ export default function MarketUpdates() {
           <p className="mt-3 text-sm text-emerald-600">
             বাংলাদেশ জুয়েলার্স এসোসিয়েশনের ঘোষিত মূল্য তালিকা অনুযায়ী স্বর্ণালংকারের জাকাত আদায়ের হিসাব।
           </p>
-          <div className="mt-5 overflow-x-auto rounded-xl border border-emerald-100">
+          <div className="mt-5 space-y-3 sm:hidden">
+            {goldRates.map((rate) => (
+              <div
+                key={rate.karat}
+                className="rounded-xl border border-emerald-100 bg-white px-4 py-3"
+              >
+                <p className="text-sm font-semibold text-emerald-900">{rate.karat}</p>
+                <div className="mt-2 flex items-center justify-between text-xs text-emerald-700">
+                  <span>বাজারমূল্য</span>
+                  <span>{formatBanglaNumber(rate.marketPrice)} টাকা</span>
+                </div>
+                <div className="mt-1 flex items-center justify-between text-xs text-emerald-700">
+                  <span>জাকাতযোগ্য মূল্য</span>
+                  <span>{formatBanglaNumber(rate.zakatEligiblePrice)} টাকা</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-5 hidden overflow-x-auto rounded-xl border border-emerald-100 sm:block">
             <table className="min-w-[520px] w-full text-left text-xs sm:text-sm">
               <thead className="bg-emerald-900 text-white">
                 <tr>
@@ -87,7 +105,29 @@ export default function MarketUpdates() {
           <p className="mt-3 text-sm text-emerald-600">
             ঘোষিত খাদ্যদ্রব্য, পরিমাণ এবং বাজারদর অনুযায়ী এক জনের ফিতরা নিচে দেখানো হলো।
           </p>
-          <div className="mt-5 overflow-x-auto rounded-xl border border-emerald-100">
+          <div className="mt-5 space-y-3 sm:hidden">
+            {fitraRates.map((rate) => (
+              <div
+                key={rate.item}
+                className="rounded-xl border border-emerald-100 bg-white px-4 py-3"
+              >
+                <p className="text-sm font-semibold text-emerald-900">{rate.item}</p>
+                <div className="mt-2 flex items-center justify-between text-xs text-emerald-700">
+                  <span>পরিমাণ</span>
+                  <span>{rate.amount}</span>
+                </div>
+                <div className="mt-1 flex items-center justify-between text-xs text-emerald-700">
+                  <span>প্রতি কেজি দর</span>
+                  <span>{formatBanglaNumber(rate.perKg)} টাকা</span>
+                </div>
+                <div className="mt-1 flex items-center justify-between text-xs text-emerald-700">
+                  <span>ফিতরা</span>
+                  <span>{formatBanglaNumber(rate.fitra)} টাকা</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-5 hidden overflow-x-auto rounded-xl border border-emerald-100 sm:block">
             <table className="min-w-[560px] w-full text-left text-xs sm:text-sm">
               <thead className="bg-emerald-900 text-white">
                 <tr>
