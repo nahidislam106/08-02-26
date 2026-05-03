@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #__next {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code, pre {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* Monaco Editor overrides */
+.monaco-editor {
+  background-color: #1e1e1e !important;
+}
+
+.monaco-editor .margin {
+  background-color: #1e1e1e !important;
+}
+
+.monaco-editor .line-numbers {
+  color: #858585 !important;
+}
+
+.monaco-editor.focused .current-line {
+  background-color: #2d2d30 !important;
+}
+
+.monaco-editor .token {
+  color: #d4d4d4 !important;
+}
+
+.monaco-editor .token.keyword {
+  color: #569cd6 !important;
+}
+
+.monaco-editor .token.string {
+  color: #ce9178 !important;
+}
+
+.monaco-editor .token.number {
+  color: #b5cea8 !important;
+}
+
+.monaco-editor .token.comment {
+  color: #6a9955 !important;
+}
+
+.monaco-editor .token.function {
+  color: #dcdcaa !important;
+}
